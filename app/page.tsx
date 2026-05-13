@@ -4,7 +4,9 @@ import Logo from '../public/blinkLogo.png';
 
 export default function HomeScreen() {
     return (
-        // min-h-screen centers hori, flex flex-col centers diag,items-center hor
+        // min-h-screen centers vertically, 
+        // flex flex-col centers diagonally,
+        // items-center horizontally
         <main className="min-h-screen flex flex-col items-center justify-center">
             <div>
             <Image 
