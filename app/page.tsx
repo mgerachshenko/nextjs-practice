@@ -21,14 +21,14 @@ export default function HomeScreen() {
             </h1>
             <div className="flex gap-4">
                 <Link
-                    href="/submitForm"
+                    href="/submitFormPage"
                     className="bg-teal-500 px-4 py-2 rounded-lg hover:bg-teal-700 transition text-white"
                 >
                     Submit Your Form
                 </Link>
                 <br />
                 <Link
-                    href="/forms"
+                    href="/formsPage"
                     className="bg-pink-500 px-4 py-2 rounded-lg hover:bg-pink-700 transition text-white"
                 >
                     View Your Surveys

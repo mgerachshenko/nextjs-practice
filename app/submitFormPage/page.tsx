@@ -1,21 +1,7 @@
 import MainHeader from "../components/main-header";
+import { submitForm } from "@/lib/actions";
 
 export default function SubmitFormPage() {
-
-    async function submitForm(formData: FormData) {
-        'use server';
-
-        const form = {
-            firstName: formData.get('firstName'),
-            lastName: formData.get('lastName'),
-            country: formData.get('country'),
-            email: formData.get('email'),
-            thoughts: formData.get('thoughts'),
-        };
-
-        console.log(form);
-    }
-
     const countries = [
         "Canada",
         "United States",
