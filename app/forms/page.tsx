@@ -1,6 +1,6 @@
 import MainHeader from "../components/main-header";
 
-export default function Forms(){ 
+export default function FormsPage(){ 
     return ( 
     <main>
         <MainHeader/>

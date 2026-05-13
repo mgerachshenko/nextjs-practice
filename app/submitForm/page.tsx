@@ -1,6 +1,21 @@
 import MainHeader from "../components/main-header";
 
-export default function SubmitForm() {
+export default function SubmitFormPage() {
+
+    async function submitForm(formData: FormData) {
+        'use server';
+
+        const form = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            country: formData.get('country'),
+            email: formData.get('email'),
+            thoughts: formData.get('thoughts'),
+        };
+
+        console.log(form);
+    }
+
     const countries = [
         "Canada",
         "United States",
@@ -20,7 +35,7 @@ export default function SubmitForm() {
                         Tell Us What You Think of One More Time Part 2!
                     </p>
                 </header>
-                <form className="flex flex-col gap-4 w-[300px]">
+                <form className="flex flex-col gap-4 w-[300px]" action={submitForm}>
                     <input
                         type="text"
                         name="firstName"
@@ -35,7 +50,10 @@ export default function SubmitForm() {
                         required
                         className="border p-2 rounded"
                     />
-                    <select className="border p-2 rounded">
+                    <select
+                        name="country"
+                        className="border p-2 rounded"
+                    >
                         {countries.map((country) => (
                             <option key={country}>
                                 {country}
