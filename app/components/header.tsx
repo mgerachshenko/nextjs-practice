@@ -1,5 +1,7 @@
 export default function Header(){ 
     return ( 
-    <h1>Welcome!</h1> 
+    <main>
+        <h1>Welcome!</h1> 
+    </main>
 ); 
 }

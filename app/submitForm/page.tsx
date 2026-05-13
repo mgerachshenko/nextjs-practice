@@ -1,10 +1,10 @@
 import MainHeader from "../components/main-header";
 
-export default function Forms(){ 
+export default function submitForm(){ 
     return ( 
     <main>
         <MainHeader/>
-       <p>Here's all your forms!</p>
+       <p>Fill out this form</p>
     </main>
 ); 
 }
