@@ -1,14 +1,6 @@
 import xss from "xss"
 import { db } from "@/initdb";
-import { SqliteError } from "better-sqlite3";
-
-type Form = {
-    firstName: string;
-    lastName: string;
-    country: string;
-    email: string;
-    thoughts: string;
-};
+import type { Form } from '@/lib/types';
 
 export function saveForm(form: Form) {
     form.firstName = xss(form.firstName);
@@ -36,4 +28,9 @@ export function saveForm(form: Form) {
     `).all();
 
     console.log(surveys);
+}
+
+export async function getForms(){
+    //await new Promise((resolve) => setTimeout(resolve, 2000));
+    return db.prepare('SELECT * FROM surveys').all() as Form[];
 }
