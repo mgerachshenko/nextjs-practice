@@ -31,6 +31,6 @@ export function saveForm(form: Form) {
 }
 
 export async function getForms(){
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     return db.prepare('SELECT * FROM surveys').all() as Form[];
 }

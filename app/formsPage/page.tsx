@@ -1,5 +1,4 @@
 import MainHeader from "../components/main-header";
-import { getForms } from "@/lib/forms";
 import FormsList from "../components/forms-list";
 import { Suspense } from "react";
 
