@@ -1,14 +1,9 @@
-import xss from "xss"
 import { db } from "@/initdb";
 import type { Form } from '@/lib/types';
 
+// Saves submitted form to the SQlite database
 export function saveForm(form: Form) {
-    form.firstName = xss(form.firstName);
-    form.lastName = xss(form.lastName);
-    form.country = xss(form.country);
-    form.email = xss(form.email);
-    form.thoughts = xss(form.thoughts);
-
+    // Inserts use data into "surveys" table
     db.prepare(`
         INSERT INTO surveys
         (firstName, lastName, country, email, thoughts)
@@ -21,15 +16,20 @@ export function saveForm(form: Form) {
         )
     `).run(form);
 
+    // Logs form into terminal
     console.log(form);
 
+    // Fetches all surveys from the database
     const surveys = db.prepare(`
         SELECT * FROM surveys
     `).all();
 
+    // Logs all surveys to the server console
     console.log(surveys);
 }
 
+// Function for adding a simulated loading delay and 
+// fetching all surveys from surveys table to prepare to display on forms page
 export async function getForms(){
     await new Promise((resolve) => setTimeout(resolve, 1000));
     return db.prepare('SELECT * FROM surveys').all() as Form[];

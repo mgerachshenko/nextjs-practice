@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// Main home header at the top of forms and submitForm pages
 export default function MainHeader(){
     return (
         <header className="bg-black text-white p-4">

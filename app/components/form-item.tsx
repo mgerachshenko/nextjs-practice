@@ -1,5 +1,6 @@
 import type { Form } from '@/lib/types';
 
+// Displays one survey form
 export default function FormItem({
     firstName,
     lastName,
@@ -12,7 +13,6 @@ export default function FormItem({
             <h2>
                 {firstName} {lastName}
             </h2>
-
             <p>{country}</p>
             <p>{email}</p>
             <p>{thoughts}</p>
