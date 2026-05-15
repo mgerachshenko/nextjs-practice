@@ -1,7 +1,15 @@
+'use client';
 import MainHeader from "../components/main-header";
 import { submitForm } from "@/lib/actions";
+import { useActionState } from "react";
+import { Redirect } from "next";
 
 export default function SubmitFormPage() {
+    const [state, formAction] = useActionState(submitForm, {
+        errorMessage: '',
+        successMessage: '',
+    });
+
     const countries = [
         "Canada",
         "United States",
@@ -21,7 +29,7 @@ export default function SubmitFormPage() {
                         Tell Us What You Think of One More Time Part 2!
                     </p>
                 </header>
-                <form className="flex flex-col gap-4 w-[300px]" action={submitForm}>
+                <form className="flex flex-col gap-4 w-[300px]" action={formAction}>
                     <input
                         type="text"
                         name="firstName"
@@ -66,7 +74,17 @@ export default function SubmitFormPage() {
                     >
                         Submit
                     </button>
+                   {state.errorMessage && (
+                        <p className="font-bold mt-4 text-red-500">
+                            {state.errorMessage}
+                        </p>
+                    )}
 
+                    {state.successMessage && (
+                        <p className="mt-4 text-green-500">
+                            {state.successMessage}
+                        </p>
+                    )}
                 </form>
             </main>
         </>
