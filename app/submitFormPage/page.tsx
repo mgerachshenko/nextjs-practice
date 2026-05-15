@@ -12,7 +12,7 @@ export default function SubmitFormPage() {
         <>
             <MainHeader />
             <main className="min-h-screen flex flex-col items-center justify-center text-center">
-                <header className="mb-6">
+                <header className="mb-3">
                     <h1 className="text-5xl font-bold">
                         Survey
                     </h1>

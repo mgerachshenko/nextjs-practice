@@ -29,6 +29,7 @@ export default function HomeScreen() {
                 <br />
                 <Link
                     href="/formsPage"
+                    prefetch={false}
                     className="bg-pink-500 px-4 py-2 rounded-lg hover:bg-pink-700 transition text-white"
                 >
                     View Your Surveys
